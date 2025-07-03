@@ -1,22 +1,25 @@
 import { Editor } from "./editor";
+import { Toolbar } from "./toolbar";
 
 interface DocumentPageProps {
-    params: Promise<{
-        documentId: string;
-    }>;
-};
-const DocumentIdPage = async ({ params }: DocumentPageProps) => {
-
-    const {documentId} = await params;
-    return (
-      
-         <div className="min-h-screen bg-[#fafbfd]">
-            <Editor />
-
-        </div>   
-            
-       
-    );
+  params: Promise<{
+    documentId: string;
+  }>;
 }
 
-export default DocumentIdPage;
+const DocumentPage = async ({ params }: DocumentPageProps) => {
+  const { documentId } =  await params;
+
+  return (
+
+
+      <div className="min-h-screen bg-[#fafbfd]">
+        <Toolbar/>
+        <Editor />
+        
+      </div>
+    
+  );
+};
+
+export default DocumentPage;
